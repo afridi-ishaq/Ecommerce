@@ -1,3 +1,5 @@
+import AddToCartButton from "@/components/AddToCartButton";
+
 async function getProduct(id) {
   const response = await fetch(
     `http://localhost:3000/api/products/${id}`,
@@ -34,7 +36,7 @@ export default async function ProductPage({ params }) {
 
       <p>Stock: {product.stock}</p>
 
-      <button>Add To Cart</button>
+      <AddToCartButton product={product} />
     </div>
   );
 }

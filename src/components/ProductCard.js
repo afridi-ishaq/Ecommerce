@@ -1,29 +1,34 @@
 import Link from "next/link";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({
+  product,
+}) {
   return (
-    <Link href={`/products/${product._id}`}>
-      <div
-        style={{
-          border: "1px solid #ddd",
-          padding: "15px",
-          borderRadius: "10px",
-          cursor: "pointer",
-        }}
-      >
+    <Link
+      href={`/products/${product._id}`}
+    >
+      <div className="border rounded-lg p-4 shadow hover:shadow-lg transition">
         <img
           src={product.image}
           alt={product.title}
-          width="200"
+          className="w-full h-52 object-cover rounded"
         />
 
-        <h2>{product.title}</h2>
+        <h2 className="text-lg font-semibold mt-3">
+          {product.title}
+        </h2>
 
-        <p>{product.description}</p>
+        <p className="text-gray-600">
+          {product.description}
+        </p>
 
-        <h3>${product.price}</h3>
+        <h3 className="text-xl font-bold mt-2">
+          ${product.price}
+        </h3>
 
-        <p>Stock: {product.stock}</p>
+        <button className="mt-3 bg-black text-white px-4 py-2 rounded">
+          View Product
+        </button>
       </div>
     </Link>
   );
