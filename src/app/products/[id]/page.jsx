@@ -6,15 +6,17 @@ async function getProduct(id) {
     }
   );
 
+  if (!response.ok) {
+    throw new Error("Failed to fetch product");
+  }
+
   return response.json();
 }
 
-export default async function ProductPage({
-  params,
-}) {
-  const product = await getProduct(
-    params.id
-  );
+export default async function ProductPage({ params }) {
+  const { id } = await params;
+
+  const product = await getProduct(id);
 
   return (
     <div>
@@ -32,9 +34,7 @@ export default async function ProductPage({
 
       <p>Stock: {product.stock}</p>
 
-      <button>
-        Add To Cart
-      </button>
+      <button>Add To Cart</button>
     </div>
   );
 }
