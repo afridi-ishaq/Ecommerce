@@ -17,9 +17,6 @@ async function getProducts(
 
 
 
-
-
-
 export default async function ProductsPage({
   searchParams,
 }) {
