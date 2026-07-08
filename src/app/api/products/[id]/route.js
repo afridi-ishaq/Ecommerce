@@ -1,31 +1,32 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 
-export async function GET(req, context) {
+export async function GET(
+  req,
+  { params }
+) {
   try {
-    const { id } = await context.params;
+    const { id } = await params;
 
     const client = await clientPromise;
+
     const db = client.db("Ecommerce");
 
-    const product = await db.collection("products").findOne({
-      _id: new ObjectId(id),
-    });
-
-    if (!product) {
-      return Response.json(
-        { message: "Product not found" },
-        { status: 404 }
-      );
-    }
+    const product = await db
+      .collection("products")
+      .findOne({
+        _id: new ObjectId(id),
+      });
 
     return Response.json(product);
   } catch (error) {
     return Response.json(
       {
-        error: error.message,
+        message: error.message,
       },
-      { status: 500 }
+      {
+        status: 500,
+      }
     );
   }
 }
