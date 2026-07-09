@@ -28,7 +28,6 @@ export async function GET() {
 export async function POST(req) {
   try {
     const body = await req.json();
-
     const client = await clientPromise;
 
     const db = client.db("Ecommerce");
