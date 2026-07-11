@@ -40,3 +40,18 @@ export async function GET(req) {
     );
   }
 }
+export async function POST(req) {
+  const body = await req.json();
+
+  const client =
+    await clientPromise;
+
+  const db =
+    client.db("Ecommerce");
+
+  const result = await db
+    .collection("products")
+    .insertOne(body);
+
+  return Response.json(result);
+}
