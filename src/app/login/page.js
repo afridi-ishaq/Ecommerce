@@ -33,12 +33,20 @@ export default function LoginPage() {
 
     const data = await response.json();
 
-    if (response.ok) {
-      setMessage(
-        "Login Successful"
-      );
+    console.log(data);
 
-      router.push("/products");
+    if (response.ok) {
+      setMessage("Login Successful");
+
+      console.log("Redirecting...", data.user.role);
+
+      if (data.user.role === "admin") {
+        router.replace("/admin/products");
+      } else {
+        router.replace("/products");
+      }
+
+      router.refresh();
     } else {
       setMessage(data.message);
     }
