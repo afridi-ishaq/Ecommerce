@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DeleteProductButton from "@/components/DeleteProductButton";
 
 async function getProducts() {
   const response = await fetch(
@@ -32,6 +33,10 @@ export default async function AdminProductsPage() {
           >
             Edit
           </Link>
+
+          <DeleteProductButton
+            id={product._id}
+          />
         </div>
       ))}
     </div>
