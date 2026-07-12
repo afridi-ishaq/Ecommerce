@@ -1,10 +1,28 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
+import { getUser } from "@/lib/getUser";
 
 export async function PUT(
   req,
   { params }
 ) {
+
+
+  const user =
+    await getUser();
+
+  if (!user) {
+    return Response.json(
+      {
+        message:
+          "Unauthorized",
+      },
+      {
+        status: 401,
+      }
+    );
+  }
+
   try {
     const { id } = await params;
 
@@ -44,6 +62,23 @@ export async function DELETE(
   { params }
 ) {
   try {
+
+
+    const user =
+      await getUser();
+
+    if (!user) {
+      return Response.json(
+        {
+          message:
+            "Unauthorized",
+        },
+        {
+          status: 401,
+        }
+      );
+    }
+
     const { id } = await params;
 
     const client = await clientPromise;
