@@ -7,7 +7,7 @@ export default function HomePage() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-5xl text-gray-900 font-bold mb-6">
-            Welcome to Ishaq Store
+            Welcome to Ishaq Storeee
           </h1>
 
           <p className="text-lg text-gray-600 mb-8">
