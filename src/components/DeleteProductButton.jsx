@@ -28,7 +28,7 @@ export default function DeleteProductButton({
   return (
     <button
       onClick={handleDelete}
-      className="bg-red-500 text-white px-3 py-1 rounded"
+      className="bg-red-500 cursor-pointer text-white px-3 py-1 rounded"
     >
       Delete
     </button>

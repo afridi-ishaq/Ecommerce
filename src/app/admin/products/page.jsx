@@ -32,13 +32,14 @@ export default async function AdminProductsPage() {
 
               <Link
                 href={`/admin/products/edit/${product._id}`}
-                className="pb-5 mb-3"
+                className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 inline-block"
               >
                 Edit
               </Link>
 
               <DeleteProductButton
                 id={product._id}
+                
               />
             </div>
           </div>
