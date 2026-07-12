@@ -8,7 +8,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl font-bold"
+          className="text-2xl font-bold hover:text-3xl hover:text-gray-200 hover:-translate-y-1.5 transition-all duration-300"
         >
           Ishaq Store
         </Link>
@@ -17,35 +17,35 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link
             href="/"
-            className="hover:text-gray-300"
+            className="hover:text-gray-300 hover:text-lg transition-all duration-300"
           >
             Home
           </Link>
 
           <Link
             href="/products"
-            className="hover:text-gray-300"
+            className="hover:text-gray-300 hover:text-lg transition-all duration-300"
           >
             Products
           </Link>
 
           <Link
             href="/cart"
-            className="hover:text-gray-300"
+            className="hover:text-gray-300 hover:text-lg transition-all duration-300"
           >
             Cart
           </Link>
 
           <Link
             href="/orders"
-            className="hover:text-gray-300"
+            className="hover:text-gray-300 hover:text-lg transition-all duration-300"
           >
             Orders
           </Link>
 
           <Link
             href="/login"
-            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200"
+            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 "
           >
             Login
           </Link>
