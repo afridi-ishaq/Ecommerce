@@ -8,6 +8,7 @@ export default function AddToCartButton({
       productId: product._id,
       title: product.title,
       price: product.price,
+      image: product.image,
       quantity: 1,
     };
 
@@ -29,7 +30,8 @@ export default function AddToCartButton({
   };
 
   return (
-    <button onClick={addToCart}>
+    <button onClick={addToCart}
+    className="bg-gray-300 text-gray-700 p-3 cursor-pointer rounded-2xl px-7 hover:bg-gray-400 transition-colors duration-300">
       Add To Cart
     </button>
   );
