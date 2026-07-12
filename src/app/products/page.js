@@ -6,7 +6,7 @@ async function getProducts(
   category
 ) {
   const response = await fetch(
-    `http://localhost:3000/api/products?search=${search}&category=${category}`,
+    `https://ecommerce-afridi.vercel.app/api/products?search=${search}&category=${category}`,
     {
       cache: "no-store",
     }

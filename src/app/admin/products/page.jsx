@@ -3,7 +3,7 @@ import DeleteProductButton from "@/components/DeleteProductButton";
 
 async function getProducts() {
   const response = await fetch(
-    "http://localhost:3000/api/products",
+    "https://ecommerce-afridi.vercel.app/api/products",
     {
       cache: "no-store",
     }

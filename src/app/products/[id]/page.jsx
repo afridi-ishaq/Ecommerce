@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getProduct(id) {
   const response = await fetch(
-    `http://localhost:3000/api/products/${id}`,
+    `https://ecommerce-afridi.vercel.app/api/products/${id}`,
     {
       cache: "no-store",
     }

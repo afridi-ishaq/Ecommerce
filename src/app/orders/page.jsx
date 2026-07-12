@@ -1,6 +1,6 @@
 async function getOrders() {
   const response = await fetch(
-    "http://localhost:3000/api/orders",
+    "https://ecommerce-afridi.vercel.app/api/orders",
     {
       cache: "no-store",
     }
