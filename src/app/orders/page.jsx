@@ -15,7 +15,7 @@ export default async function OrdersPage() {
   return (
     <div className="min-h-screen py-10 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+        <h1 className="text-3xl font-bold text-gray-300 mb-8 text-center">
           My Orders
         </h1>
 
