@@ -38,49 +38,57 @@ export default function RegisterPage() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            onChange={handleChange}
-          />
-        </div>
-
-        <br />
-
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={handleChange}
-          />
-        </div>
-
-        <br />
-
-        <div>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handleChange}
-          />
-        </div>
-
-        <br />
-
-        <button type="submit">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Register
-        </button>
-      </form>
+        </h1>
 
-      <p>{message}</p>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300"
+          >
+            Register
+          </button>
+        </form>
+
+        {message && (
+          <p className="mt-4 text-center text-sm font-medium text-gray-700">
+            {message}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
