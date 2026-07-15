@@ -13,7 +13,7 @@ export default async function OrdersPage() {
   const orders = await getOrders();
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
+    <div className="min-h-screen py-10 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
           My Orders
@@ -29,21 +29,21 @@ export default async function OrdersPage() {
                 <span className="font-semibold text-gray-700">
                   Address:
                 </span>{" "}
-                {order.address}
+                <span className="text-gray-600">{order.address}</span>
               </p>
 
               <p className="mb-2">
                 <span className="font-semibold text-gray-700">
                   City:
                 </span>{" "}
-                {order.city}
+                <span className="text-gray-600">{order.city}</span>
               </p>
 
               <p className="mb-2">
                 <span className="font-semibold text-gray-700">
                   Phone:
                 </span>{" "}
-                {order.phone}
+                <span className="text-gray-600">{order.phone}</span>
               </p>
 
               <p>
