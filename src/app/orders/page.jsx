@@ -13,39 +13,51 @@ export default async function OrdersPage() {
   const orders = await getOrders();
 
   return (
-    <div>
-      <h1>My Orders</h1>
+    <div className="min-h-screen bg-gray-100 py-10 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+          My Orders
+        </h1>
 
-      {orders.map((order) => (
-        <div
-          key={order._id}
-          style={{
-            border: "1px solid #ddd",
-            padding: "10px",
-            marginBottom: "10px",
-          }}
-        >
-          <p>
-            Address:
-            {order.address}
-          </p>
+        <div className="space-y-6">
+          {orders.map((order) => (
+            <div
+              key={order._id}
+              className="bg-white shadow-md rounded-xl p-6 border border-gray-200"
+            >
+              <p className="mb-2">
+                <span className="font-semibold text-gray-700">
+                  Address:
+                </span>{" "}
+                {order.address}
+              </p>
 
-          <p>
-            City:
-            {order.city}
-          </p>
+              <p className="mb-2">
+                <span className="font-semibold text-gray-700">
+                  City:
+                </span>{" "}
+                {order.city}
+              </p>
 
-          <p>
-            Phone:
-            {order.phone}
-          </p>
+              <p className="mb-2">
+                <span className="font-semibold text-gray-700">
+                  Phone:
+                </span>{" "}
+                {order.phone}
+              </p>
 
-          <p>
-            Status:
-            {order.status}
-          </p>
+              <p>
+                <span className="font-semibold text-gray-700">
+                  Status:
+                </span>{" "}
+                <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+                  {order.status}
+                </span>
+              </p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
